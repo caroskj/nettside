@@ -1,1 +1,102 @@
+PRIDE FLAGG 1 CSS/HTML 
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pride Flag</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+    }
 
+    .stripe {
+      flex-grow: 1;
+      width: 50%;
+    }
+
+    .red { background-color: #FF0000; }
+    .orange { background-color: #FFA500; }
+    .yellow { background-color: #FFFF00; }
+    .green { background-color: #008000; }
+    .blue { background-color: #0000FF; }
+    .purple { background-color: #800080; }
+  </style>
+</head>
+<body>
+  <div class="stripe red"></div>
+  <div class="stripe orange"></div>
+  <div class="stripe yellow"></div>
+  <div class="stripe green"></div>
+  <div class="stripe blue"></div>
+  <div class="stripe purple"></div>
+</body>
+</html>
+
+</body>
+</html>
+
+PRIDE FLAG 2 CANVAS API
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pride Flag</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="prideFlag"></canvas>
+
+  <script>
+    const canvas = document.getElementById('prideFlag');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size
+    canvas.width = 709;
+    canvas.height = 504;
+
+    // Define colors
+    const colors = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#800080'];
+
+    // Draw Pride flag
+    const stripeHeight = canvas.height / colors.length;
+
+    colors.forEach((color, index) => {
+      ctx.fillStyle = color;
+      ctx.fillRect(0, index * stripeHeight, canvas.width, stripeHeight);
+    });
+  </script>
+</body>
+</html>
+
+PRIDE FLAG 3 SVG API
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pride Flag</title>
+</head>
+<body>
+  <svg id="prideFlag" width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+    <!-- Draw Pride flag -->
+    <rect x="0" y="0" width="500" height="83.33" fill="#FF0000" />
+    <rect x="0" y="83.33" width="500" height="83.33" fill="#FFA500" />
+    <rect x="0" y="166.66" width="500" height="83.33" fill="#FFFF00" />
+    <rect x="0" y="250" width="500" height="83.33" fill="#008000" />
+    <rect x="0" y="333.33" width="500" height="83.33" fill="#0000FF" />
+    <rect x="0" y="416.66" width="500" height="83.34" fill="#800080" />
+  </svg>
+</body>
+</html>
