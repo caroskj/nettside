@@ -1,13 +1,14 @@
 body {
     background-color: lightblue;
-    
-    
+    color: #333; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 40; 
+    padding: 40; 
   }
 
 div {
     border: 4px;
     text-align: center;
-    
 }
 
 
@@ -16,6 +17,7 @@ img{
     height: 300px;
     width: 300px;
     padding: 10px;
+    
 }
 
 .test{
