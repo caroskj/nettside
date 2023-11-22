@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <Body>
+        <div class = "box">
+            <div class = "inner_box">
+                <div class = "image_box">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" >
+                            <circle stroke="none" stroke-width="0" cx="200" cy="200" r="200" fill="beige" />
+                            <rect x="150" y="290" width="100" height="20" fill="black"/>
+                            <rect x="185" y="170" width="30" height="60" fill="brown"/>
+                            <rect x="77" y="137" width="46" height="26" fill="white" />
+                            <rect x="277" y="137" width="46" height="26" fill="white" />
+                            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="13" fill="blue" />
+                            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="13" fill="blue" />
+                            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="8" fill="black" />
+                            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="8" fill="black" />
+                            <circle stroke="none" stroke-width="0" cx="200" cy="-400" r="500" fill="brown" />             
+                         </svg>
+                        </div>
+                </div>
+            </div>
+            <div class = "inner_box"></div>
+            <div class = "inner_box"></div>
+            <div class = "inner_box"></div>
+        </div>
+        <h1>cowboy person</h1>
+        <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" >
+            <circle stroke="none" stroke-width="0" cx="200" cy="200" r="200" fill="beige" />
+            <rect x="150" y="290" width="100" height="20" fill="black"/>
+            <rect x="185" y="170" width="30" height="60" fill="brown"/>
+            <rect x="77" y="137" width="46" height="26" fill="white" />
+            <rect x="277" y="137" width="46" height="26" fill="white" />
+            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="13" fill="blue" />
+            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="13" fill="blue" />
+            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="8" fill="black" />
+            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="8" fill="black" />
+            <circle stroke="none" stroke-width="0" cx="200" cy="-400" r="500" fill="brown" />             
+         </svg>
+        </div>
+        <div>
+         <svg id="cowboy" xmlns="http://www.w3.org/2000/svg"></svg>
+       
+        <script>
+            const svg = document.getElementById("cowboy");
+            svg.setAttribute("width", "400");
+            svg.setAttribute("height", "400");
+
+// this function makes a circle the same way as pyret
+            function circle(radius, mode, color, cx, cy) {
+                console.log("function for å tegne en sirkel som pyret, med plassering inkludert");
+                const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", cx);
+                circle.setAttribute("cy", cy);
+                circle.setAttribute("r", radius);
+                circle.setAttribute("fill", color);
+                return circle;
+            }
+// this function makes a rectancle the same way as pyret
+                function rect(width, height, mode, color, x, y) {
+                console.log("function for å tegne et rektangel som pyret, med plassering inkludert");
+                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("y", y)
+                rect.setAttribute("x", x)
+                rect.setAttribute("width", width);
+                rect.setAttribute("height", height);
+                rect.setAttribute("fill", color);
+                return rect;
+            }
+
+            function place_image_xy(img1, x, y, img2) {
+                if (img2.tagName === "rect") {
+                    img2.setAttribute("x", x);
+                    img2.setAttribute("y", y);
+                    img1.appendChild(img2);
+                    return img1;
+                } else if (img2.tagName === "circle") {
+                    img2.setAttribute("cx", x);
+                    img2.setAttribute("cy", y);
+                    img1.appendChild(img2);
+                    return img1;
+                }
+            }
+            
+
+            function overlay_xy_circle(img, dx, dy, circle) {
+                circle.setAttribute("cx", dx);
+                circle.setAttribute("cy", dy);
+                img.appendChild(circle);
+                return img;
+            }
+
+            function overlay_xy_rect(img, x, y, rect) {
+                rect.setAttribute("x", x);
+                rect.setAttribute("y", y);
+                img.appendChild(rect);
+                return img;
+                }
+
+     
+// Bygge figuren
+
+head = circle(200, "solid", "beige", 200, 200)
+eye_outline_left = rect(46, 26, "solid", "white", 77, 137)
+blue_outline_left = circle(13, "solid", "blue", 100, 150)
+pupil_left = circle(8, "solid", "black", 100, 150)
+eye_outline_right = rect(46, 26, "solid", "white", 277, 137)
+blue_outline_right = circle(13, "solid", "blue", 300, 150)
+pupil_right = circle(8, "solid", "black", 300, 150)
+nose = rect(30, 60, "solid", "brown", 185, 170)
+mouth = rect(100, 20, "solid", "black", 150, 290)
+Hat = circle(500, "solid", "brown", 200, -400)
+
+
+// eye_blue = place_image_xy(blue_outline, 0, 0, eye_outline)
+
+//Head_nose = svg.appendChild(place_image_xy(head, 200, 200, nose))
+
+
+
+
+svg.appendChild(head)
+svg.appendChild(nose)
+svg.appendChild(mouth)
+svg.appendChild(eye_outline_left)
+svg.appendChild(blue_outline_left)
+svg.appendChild(pupil_left)
+svg.appendChild(eye_outline_right)
+svg.appendChild(blue_outline_right)
+svg.appendChild(pupil_right)
+svg.appendChild(Hat)
+
+
+
+         //   svg.appendChild(circle(50, "solid", "black"));
+         //   svg.appendChild(circle(25, "solid", "white"));
+
+        </script>
+        </div>
+        <div>
+            <canvas id="cowboy" width="400" height="400"></canvas>
+                <script>
+                    // konstruere canvas elementet
+                var canvas = document.getElementById('cowboy');
+
+                    // konstruere konteksten til der bildet skal tegnes
+                var ctx = canvas.getContext('2d');
+
+                function circle(radius, fillColor, x, y) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+                    ctx.fillStyle = fillColor;
+                    ctx.fill();
+                }
+                circle(50, "blue", 100, 100)
+
+                </script>
+        </div>
+</body>
+</html>
