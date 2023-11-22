@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Japanese</title>
+        <link rel='stylesheet' href='my-flag.css'/>
+    </head>
+    <body>
+        <h1>Magi Natasha Nakangi</h1>
+            <p>Medlem i gruppe 10B 
+                <br> 2 truths + 1 lie 
+                    <br> Elsker Japansk kultur. 
+                        <br> Trener 2 ganger i uka. 
+                            <br> Høst er favoritt årstiden min.
+                        <br> Pyretkode til flagg: </p>
+        <div>
+            <i>&nbsp;</i>
+        </div>
+        <svg width="400" height="190">
+            <rect width="300" height="190" style="fill:rgb(255, 255, 255);stroke-width:2;stroke:rgb(0,0,0)" />
+            <circle cx="150" cy="95" r="60" fill="red" />
+          </svg>
+        
+          //
+        <canvas id="japaneseFlag" width="300" height="200"></canvas>
+        <script>
+          // get canvas element
+          const canvas = document.getElementById('japaneseFlag');
+          const context = canvas.getContext('2d');
+      
+          // white bg
+          context.fillStyle = 'white';
+          context.fillRect(0, 0, canvas.width, canvas.height);
+      
+          // red circle
+          context.beginPath();
+          context.arc(canvas.width / 2, canvas.height / 2, 58, 0, 2 * Math.PI);
+          context.fillStyle = 'red';
+          context.fill();
+        </script>
+    </body>
+</html>
