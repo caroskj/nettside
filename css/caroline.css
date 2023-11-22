@@ -1,0 +1,29 @@
+
+body {
+    margin: 40;
+    padding: 40;
+    background-color: #BBBBDD
+}
+
+h1 {
+    color: #191971; /* Midnight Blue */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+p {
+    color: #191971; /* Midnight Blue */
+    text-align: center;
+}
+
+h2 {
+    color: #191971; /* Midnight Blue */
+    text-align: center;
+}
+
+svg {
+    display: block;
+    margin: auto;
+    background-color: #191971; /* Midnight Blue */
+}
+
