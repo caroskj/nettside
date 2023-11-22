@@ -7,6 +7,7 @@ function rect(width, height, mode, color, x, y) {
                 rect.setAttribute("height", height);
                 rect.setAttribute("fill", color);
                 return rect;
+}
 
   function circle(radius, mode, color, cx, cy) {
                 console.log("function for å tegne en sirkel som pyret, med plassering inkludert");
@@ -16,3 +17,8 @@ function rect(width, height, mode, color, x, y) {
                 circle.setAttribute("r", radius);
                 circle.setAttribute("fill", color);
                 return circle;
+  }
+
+  svg.appendChild(rect(40, 50, "solid", "red", 100, 100));
+
+  
