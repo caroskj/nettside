@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/caroline.css"
-    <title>Caroline</title>
+    <link rel="stylesheet" href="css/caroline.css">
+    <tiltle>Caroline</tiltle>
 </head>
     
 <body>
@@ -80,6 +80,7 @@
     // Tegne Pyret kunst
 
     himmelBakgrunn = rect(600, 600, "solid", "#191971", 0, 0); //midnight-blue
+    /*
     himmelSirkel1 = circle(500, 300, 0, "#4B0082"); //indigo
     himmelSirkel2 = circle(450, 300, 0, "#483E8B"); //dark-slate-blue
     himmelSirkel3 = circle(400, 300, 0, "#695ACD"); //slate-blue
@@ -96,23 +97,24 @@
     stjerne4 = circle(2, 270, 520, "#8787BB"); //lavender
     stjerne5 = circle(2, 300, 570, "#8787BB"); //lavender
     stjerne6 = circle(2, 500, 500, "#8787BB"); //lavender
+    */
 
-    svg.appendChild(circle(500, 300, 0, "#4B0082")); //indigo
-    svg.appendChild(circle(450, 300, 0, "#483E8B")); //dark-slate-blue
-    svg.appendChild(circle(400, 300, 0, "#695ACD")); //slate-blue
-    svg.appendChild(circle(350, 300, 0, "#8B008B")); //dark-magenta
-    svg.appendChild(circle(300, 300, 0, "#BA55D2")); //medium-orchid
-    svg.appendChild(circle(250, 300, 0, "#ED82EE")); //violet
-    svg.appendChild(circle(200, 100, 0, "#191971")); //midnight-blue
-    svg.appendChild(circle(250, 500, -100, "#191971")); //midnight-blue
-    svg.appendChild(circle(15, 420, 150, "#191971")); //midnight-blue
-    svg.appendChild(circle(15, 450, 155, "#191971")); //midnight-blue
-    svg.appendChild(circle(2, 500, 560, "#8787BB")); //lavender
-    svg.appendChild(circle(2, 200, 580, "#8787BB")); //lavender
-    svg.appendChild(circle(2, 100, 500, "#8787BB")); //lavender
-    svg.appendChild(circle(2, 270, 520, "#8787BB")); //lavender
-    svg.appendChild(circle(2, 300, 570, "#8787BB")); //lavender
-    svg.appendChild(circle(2, 500, 500, "#8787BB")); //lavender
+    svg.appendChild(circle(500, 300, 600, "#4B0082")); //indigo
+    svg.appendChild(circle(450, 300, 600, "#483E8B")); //dark-slate-blue
+    svg.appendChild(circle(400, 300, 600, "#695ACD")); //slate-blue
+    svg.appendChild(circle(350, 300, 600, "#8B008B")); //dark-magenta
+    svg.appendChild(circle(300, 300, 600, "#BA55D2")); //medium-orchid
+    svg.appendChild(circle(250, 300, 600, "#ED82EE")); //violet
+    svg.appendChild(circle(200, 100, 600, "#191971")); //midnight-blue
+    svg.appendChild(circle(250, 500, 700, "#191971")); //midnight-blue
+    svg.appendChild(circle(15, 420, 450, "#191971")); //midnight-blue
+    svg.appendChild(circle(15, 450, 445, "#191971")); //midnight-blue
+    svg.appendChild(circle(2, 500, 40, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 200, 20, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 100, 100, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 270, 80, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 300, 30, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 500, 100, "#8787BB")); //lavender
 
     /* 
     Forsøkt å bruke definisjonene inn i funksjonen for å tegne sirkler.
@@ -140,6 +142,55 @@
     */
   </script>
 </div>
+
+    <h2>Min Canvas Kunst</h2>
+    <div>
+     <canvas id="lavenderHazeC" width="600" height="600" style="border:1px solid #191971;"></canvas>
+
+      <script>
+        const canvas = document.getElementById("lavenderHazeC");
+        const ctx = canvas.getContext("2d");
+
+        // Tegn en sirkel
+        function circle(r, x, y, color) {
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // Tegn et rektangel
+        function rect(x, y, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+        }
+     
+        // Tegn et rektangel
+          function rect(x, y, height, width, color) {
+              ctx.fillStyle = color;
+              ctx.fillRect(x, y, height, width);
+        }
+      
+        rect(0, 0, 600, 600, "#191971"); //midnight-blue
+        circle(500, 300, 600, "#4B0082"); //indigo
+        circle(450, 300, 600, "#483E8B"); //dark-slate-blue
+        circle(400, 300, 600, "#695ACD"); //slate-blue
+        circle(350, 300, 600, "#8B008B"); //dark-magenta
+        circle(300, 300, 600, "#BA55D2"); //medium-orchid
+        circle(250, 300, 600, "#ED82EE"); //violet
+        circle(200, 100, 600, "#191971"); //midnight-blue
+        circle(250, 500, 700, "#191971"); //midnight-blue
+        circle(15, 420, 450, "#191971"); //midnight-blue
+        circle(15, 450, 445, "#191971"); //midnight-blue
+        circle(2, 500, 40, "#8787BB"); //lavender
+        circle(2, 200, 20, "#8787BB"); //lavender
+        circle(2, 100, 100, "#8787BB"); //lavender
+        circle(2, 270, 80, "#8787BB"); //lavender
+        circle(2, 300, 30, "#8787BB"); //lavender
+        circle(2, 500, 100, "#8787BB"); //lavender
+      </script>
+    </div>
 
 </body>
 </html> 
