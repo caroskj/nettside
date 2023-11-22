@@ -1,1 +1,160 @@
+  <svg id="lavenderHaze" xmlns="http://www.w3.org/2000/svg"></svg>
 
+  const svg = document.getElementById("lavenderHaze");
+    svg.setAttribute("width", "600")
+    svg.setAttribute("height", "600")
+
+  // Funksjon for å tegne sirkel
+  function circle(radius, cx, cy, color) {    
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+
+    //Sett attributter for sirkelen
+      circle.setAttribute("r", radius);   
+      circle.setAttribute("cx", cx);
+      circle.setAttribute("cy", cy);
+      circle.setAttribute("fill", color);
+    return circle;
+    }
+
+    /*
+    Eksempel på bruk av circle funksjonen: 
+      svg.appendChild(circle(50, 100, 100, "pink"));
+    */
+
+    // Funksjon for å tegne firkant
+    function rect(width, height, mode, color, x, y) {
+      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+
+      // Sett attributter for rektangelet:
+      rect.setAttribute("y", y);
+      rect.setAttribute("x", x);
+      rect.setAttribute("width", width);
+      rect.setAttribute("height", height);
+      rect.setAttribute("fill", color);
+
+
+    // Legg til svg-element i body
+    document.body.appendChild(svg);
+
+    // Legg til rektangel i svg-elementet
+    svg.appendChild(rect);
+
+    // Returner det opprettede rektangelet.
+    return rect;
+
+
+    document.getElementById("dinElementId").appendChild(myRect);
+    }
+    /*
+    Eksempel på bruk av rect funksjonen:
+      svg.appendChild(rect(50, 80, "solid", "blue", 100, 100));
+    */
+
+    // Tegne Pyret kunst
+
+    himmelBakgrunn = rect(600, 600, "solid", "#191971", 0, 0); //midnight-blue
+    /*
+    himmelSirkel1 = circle(500, 300, 0, "#4B0082"); //indigo
+    himmelSirkel2 = circle(450, 300, 0, "#483E8B"); //dark-slate-blue
+    himmelSirkel3 = circle(400, 300, 0, "#695ACD"); //slate-blue
+    himmelSirkel4 = circle(350, 300, 0, "#8B008B"); //dark-magenta
+    himmelSirkel5 = circle(300, 300, 0, "#BA55D2"); //medium-orchid
+    himmelSirkel6 = circle(250, 300, 0, "#ED82EE"); //violet
+    fjell1 = circle(200, 100, 0, "#191971"); //midnight-blue
+    fjell2 = circle(250, 500, -100, "#191971"); //midnight-blue
+    person1 = circle(15, 420, 150, "#191971"); //midnight-blue
+    person2 = circle(15, 450, 155, "#191971"); //midnight-blue
+    stjerne1 = circle(2, 500, 560, "#8787BB"); //lavender
+    stjerne2 = circle(2, 200, 580, "#8787BB"); //lavender
+    stjerne3 = circle(2, 100, 500, "#8787BB"); //lavender
+    stjerne4 = circle(2, 270, 520, "#8787BB"); //lavender
+    stjerne5 = circle(2, 300, 570, "#8787BB"); //lavender
+    stjerne6 = circle(2, 500, 500, "#8787BB"); //lavender
+    */
+
+    svg.appendChild(circle(500, 300, 600, "#4B0082")); //indigo
+    svg.appendChild(circle(450, 300, 600, "#483E8B")); //dark-slate-blue
+    svg.appendChild(circle(400, 300, 600, "#695ACD")); //slate-blue
+    svg.appendChild(circle(350, 300, 600, "#8B008B")); //dark-magenta
+    svg.appendChild(circle(300, 300, 600, "#BA55D2")); //medium-orchid
+    svg.appendChild(circle(250, 300, 600, "#ED82EE")); //violet
+    svg.appendChild(circle(200, 100, 600, "#191971")); //midnight-blue
+    svg.appendChild(circle(250, 500, 700, "#191971")); //midnight-blue
+    svg.appendChild(circle(15, 420, 450, "#191971")); //midnight-blue
+    svg.appendChild(circle(15, 450, 445, "#191971")); //midnight-blue
+    svg.appendChild(circle(2, 500, 40, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 200, 20, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 100, 100, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 270, 80, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 300, 30, "#8787BB")); //lavender
+    svg.appendChild(circle(2, 500, 100, "#8787BB")); //lavender
+
+    /* 
+    Forsøkt å bruke definisjonene inn i funksjonen for å tegne sirkler.
+    Detter fikk jeg ikke til å fungere, 
+    men lar det står slik at det å mulig å se hva jeg har forsøkt. 
+    Se koden under.
+    */
+
+    /*
+    svg.appendChild(rect(himmelBakgrunn));
+    svg.appendChild(circle(himmelSirkel1));
+    svg.appendChild(circle(himmelSirkel2));
+    svg.appendChild(circle(himmelSirkel3));
+    svg.appendChild(circle(himmelSirkel4));
+    svg.appendChild(circle(himmelSirkel5));
+    svg.appendChild(circle(himmelSirkel6));
+    svg.appendChild(circle(fjell1));
+    svg.appendChild(circle(fjell2));
+    svg.appendChild(circle(stjerne1));
+    svg.appendChild(circle(stjerne2));
+    svg.appendChild(circle(stjerne3));
+    svg.appendChild(circle(stjerne4));
+    svg.appendChild(circle(stjerne5));
+    svg.appendChild(circle(stjerne6));
+    */
+
+
+     <canvas id="lavenderHazeC" width="600" height="600" style="border:1px solid #191971;"></canvas>
+
+        const canvas = document.getElementById("lavenderHazeC");
+        const ctx = canvas.getContext("2d");
+
+        // Tegn en sirkel
+        function circle(r, x, y, color) {
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // Tegn et rektangel
+        function rect(x, y, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+        }
+     
+        // Tegn et rektangel
+          function rect(x, y, height, width, color) {
+              ctx.fillStyle = color;
+              ctx.fillRect(x, y, height, width);
+        }
+      
+        rect(0, 0, 600, 600, "#191971"); //midnight-blue
+        circle(500, 300, 600, "#4B0082"); //indigo
+        circle(450, 300, 600, "#483E8B"); //dark-slate-blue
+        circle(400, 300, 600, "#695ACD"); //slate-blue
+        circle(350, 300, 600, "#8B008B"); //dark-magenta
+        circle(300, 300, 600, "#BA55D2"); //medium-orchid
+        circle(250, 300, 600, "#ED82EE"); //violet
+        circle(200, 100, 600, "#191971"); //midnight-blue
+        circle(250, 500, 700, "#191971"); //midnight-blue
+        circle(15, 420, 450, "#191971"); //midnight-blue
+        circle(15, 450, 445, "#191971"); //midnight-blue
+        circle(2, 500, 40, "#8787BB"); //lavender
+        circle(2, 200, 20, "#8787BB"); //lavender
+        circle(2, 100, 100, "#8787BB"); //lavender
+        circle(2, 270, 80, "#8787BB"); //lavender
+        circle(2, 300, 30, "#8787BB"); //lavender
+        circle(2, 500, 100, "#8787BB"); //lavender
