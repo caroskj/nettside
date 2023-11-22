@@ -27,3 +27,9 @@ svg {
     background-color: #191971; /* Midnight Blue */
 }
 
+canvas {
+    display: block;
+    margin: auto;
+    background-color: #191971; /* Midnight Blue */
+}
+
