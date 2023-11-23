@@ -1,50 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/kristian.css">
+    <link rel="stylesheet" href="kristian.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kristian Home Page</title>
+    <title>Document</title>
 </head>
     <Body>
-        <div class = "box">
-            <div class = "inner_box">
-                <div class = "image_box">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" >
-                            <circle stroke="none" stroke-width="0" cx="200" cy="200" r="200" fill="beige" />
-                            <rect x="150" y="290" width="100" height="20" fill="black"/>
-                            <rect x="185" y="170" width="30" height="60" fill="brown"/>
-                            <rect x="77" y="137" width="46" height="26" fill="white" />
-                            <rect x="277" y="137" width="46" height="26" fill="white" />
-                            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="13" fill="blue" />
-                            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="13" fill="blue" />
-                            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="8" fill="black" />
-                            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="8" fill="black" />
-                            <circle stroke="none" stroke-width="0" cx="200" cy="-400" r="500" fill="brown" />             
-                         </svg>
-                        </div>
-                </div>
-            </div>
-            <div class = "inner_box"></div>
-            <div class = "inner_box"></div>
-            <div class = "inner_box"></div>
-        </div>
-        <h1>cowboy person</h1>
-        <div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" >
-            <circle stroke="none" stroke-width="0" cx="200" cy="200" r="200" fill="beige" />
-            <rect x="150" y="290" width="100" height="20" fill="black"/>
-            <rect x="185" y="170" width="30" height="60" fill="brown"/>
-            <rect x="77" y="137" width="46" height="26" fill="white" />
-            <rect x="277" y="137" width="46" height="26" fill="white" />
-            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="13" fill="blue" />
-            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="13" fill="blue" />
-            <circle stroke="none" stroke-width="0" cx="100" cy="150" r="8" fill="black" />
-            <circle stroke="none" stroke-width="0" cx="300" cy="150" r="8" fill="black" />
-            <circle stroke="none" stroke-width="0" cx="200" cy="-400" r="500" fill="brown" />             
-         </svg>
-        </div>
+        <h1>Kristian</h1>
+        <h2>
+            2 truths and a lie
+        </h2>
+        <p>
+            1. Jeg har bachelor fra før
+        </p>
+        <p>
+            2. Jeg kommer fra bærum
+        </p>
+        <p>
+            3. Jeg gjorde denne oppgaven på 5 minutter
+        </p>
         <div>
          <svg id="cowboy" xmlns="http://www.w3.org/2000/svg"></svg>
        
@@ -116,7 +91,7 @@ blue_outline_right = circle(13, "solid", "blue", 300, 150)
 pupil_right = circle(8, "solid", "black", 300, 150)
 nose = rect(30, 60, "solid", "brown", 185, 170)
 mouth = rect(100, 20, "solid", "black", 150, 290)
-Hat = circle(500, "solid", "brown", 200, -400)
+hat = circle(500, "solid", "brown", 200, -400)
 
 
 // eye_blue = place_image_xy(blue_outline, 0, 0, eye_outline)
@@ -135,7 +110,7 @@ svg.appendChild(pupil_left)
 svg.appendChild(eye_outline_right)
 svg.appendChild(blue_outline_right)
 svg.appendChild(pupil_right)
-svg.appendChild(Hat)
+svg.appendChild(hat)
 
 
 
@@ -144,6 +119,7 @@ svg.appendChild(Hat)
 
         </script>
         </div>
+        <h1> SVG Cowboy</h1>
         <div>
             <canvas id="cowboy" width="400" height="400"></canvas>
                 <script>
@@ -153,15 +129,17 @@ svg.appendChild(Hat)
                     // konstruere konteksten til der bildet skal tegnes
                 var ctx = canvas.getContext('2d');
 
-                function circle(radius, fillColor, x, y) {
+                function circle(r, color, x, y) {
                     ctx.beginPath();
-                    ctx.arc(x, y, radius, 0, 2 * Math.PI);
-                    ctx.fillStyle = fillColor;
+                    ctx.arc(x, y, r, 0, 2 * Math.PI);
+                    ctx.fillStyle = color;
                     ctx.fill();
                 }
-                circle(50, "blue", 100, 100)
+               ring = circle(50, "blue", 100, 100);
+               return ring;
 
                 </script>
         </div>
+
 </body>
 </html>
